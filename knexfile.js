@@ -7,13 +7,13 @@ module.exports = {
 			filename: "./tasks.db3",
 		},
 		useNullAsDefault: true,
-	},
 
-	migrateions: {
-		directory: "./data/migrateions.js",
-	},
+		migrations: {
+			directory: "./data/migrations",
+		},
 
-	seeds: {
-		directory: "./data/seeds.js",
+		seeds: {
+			directory: "./data/seeds",
+		},
 	},
 };

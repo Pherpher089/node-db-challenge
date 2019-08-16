@@ -8,7 +8,7 @@ server.use(express.json());
 server.use("/api/tasks", Tasks);
 
 server.get("/", (req, res) => {
-	res.status(200).json("<h1>Hello from Node Database Sprint Challenge!</h1>");
+	res.status(200).send("<h1>Hello from Node Database Sprint Challenge!</h1>");
 });
 
 module.exports = server;
