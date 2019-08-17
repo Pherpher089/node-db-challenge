@@ -1,21 +1,21 @@
 exports.up = function(knex) {
 	return knex.schema
 		.createTable("projects", tbl => {
-			tbl.increments("project_id");
+			tbl.increments();
 			tbl.text("name", 128).notNullable();
 			tbl.text("description", 128);
-			tbl.boolean("completed", false);
+			tbl.text("completed").defaultTo("false");
 		})
 		.createTable("resources", tbl => {
-			tbl.increments("resource_id");
+			tbl.increments();
 			tbl.text("name", 128).notNullable();
 			tbl.text("description", 128);
 		})
 		.createTable("tasks", tbl => {
-			tbl.increments("task_id");
+			tbl.increments();
 			tbl.text("description", 128).notNullable();
 			tbl.text("notes", 128);
-			tbl.boolean("completed");
+			tbl.text("completed").defaultTo("false");
 			tbl
 				.integer("project_id")
 				.unsigned()
